@@ -5,7 +5,7 @@
 <style>
 body{font-family:Arial;text-align:center;padding:40px;background:#111;color:white;}
 input,button{padding:10px;margin:10px;}
-#riddle{display:none;font-size:22px;color:yellow;}
+#riddle{display:none;font-size:22px;color:yellow;margin-top:20px;}
 </style>
 </head>
 <body>
@@ -15,19 +15,32 @@ input,button{padding:10px;margin:10px;}
 <button onclick="checkCode()">Submit</button>
 
 <p id="msg"></p>
-
-<div id="riddle">
-🧩 I have many books but no brain, many students but no mouth. Find me.
-</div>
+<div id="riddle"></div>
 
 <script>
 function checkCode(){
-let code=document.getElementById("code").value;
-if(code==="DRAGON123"){
-document.getElementById("riddle").style.display="block";
-document.getElementById("msg").innerHTML="✅ Correct!";
-}else{
-document.getElementById("msg").innerHTML="❌ Wrong Code!";
+let code=document.getElementById("code").value.toUpperCase();
+let riddle=document.getElementById("riddle");
+let msg=document.getElementById("msg");
+
+if(code==="DRAGON124"){
+msg.innerHTML="✅ Correct!";
+riddle.style.display="block";
+riddle.innerHTML="🧩 I am full of computers and typing sounds. Find me = LAB";
+}
+else if(code==="DRAGON125"){
+msg.innerHTML="✅ Correct!";
+riddle.style.display="block";
+riddle.innerHTML="🧩 Muscles grow and weights rise here. Find me = GYM";
+}
+else if(code==="DRAGON126"){
+msg.innerHTML="✅ Correct!";
+riddle.style.display="block";
+riddle.innerHTML="🧩 Hungry students come here for snacks. Find me = CANTEEN";
+}
+else{
+msg.innerHTML="❌ Wrong Code!";
+riddle.style.display="none";
 }
 }
 </script>
