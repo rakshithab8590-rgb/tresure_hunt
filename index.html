@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Treasure Hunt</title>
+<style>
+body{font-family:Arial;text-align:center;padding:40px;background:#111;color:white;}
+input,button{padding:10px;margin:10px;}
+#riddle{display:none;font-size:22px;color:yellow;}
+</style>
+</head>
+<body>
+
+<h1>Enter Secret Code</h1>
+<input type="text" id="code" placeholder="Enter code">
+<button onclick="checkCode()">Submit</button>
+
+<p id="msg"></p>
+
+<div id="riddle">
+🧩 I have many books but no brain, many students but no mouth. Find me.
+</div>
+
+<script>
+function checkCode(){
+let code=document.getElementById("code").value;
+if(code==="DRAGON123"){
+document.getElementById("riddle").style.display="block";
+document.getElementById("msg").innerHTML="✅ Correct!";
+}else{
+document.getElementById("msg").innerHTML="❌ Wrong Code!";
+}
+}
+</script>
+
+</body>
+</html>
